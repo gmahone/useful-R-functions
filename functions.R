@@ -51,3 +51,7 @@ create_lsd_table <- function(means_df, lsd, decreasing=TRUE){
   means_df$Groups <- apply(init_mat, 2, function(x) paste(as.vector(na.omit(x)), sep="", collapse=","))
   return(means_df)
 }
+                          
+split.and.pull <- function(x, split, index){
+  return(sapply(strsplit(x=x, split=split), function(x) x[index]))
+}
