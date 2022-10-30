@@ -55,3 +55,21 @@ create_lsd_table <- function(means_df, lsd, decreasing=TRUE){
 split.and.pull <- function(x, split, index){
   return(sapply(strsplit(x=x, split=split), function(x) x[index]))
 }
+                
+stretch <- function(x, new_min=0, new_max=1){
+  old_min <- min(x, na.rm=TRUE)
+  old_max <- max(x, na.rm=TRUE)
+  
+  new_x <- x - old_min
+  
+  if(old_min == old_max){
+    new_x <- new_x + new_min
+  } else {
+    old_max <- max(new_x, na.rm=TRUE)
+    new_x <- new_x / old_max * (new_max - new_min) + new_min
+  }
+  return(new_x)
+}               
+                
+                
+                
