@@ -9,4 +9,11 @@ get_rank <- function(x, decreasing=FALSE){
   return(tmp_rank)
 }
 
-
+do.load <- function(rdata){
+  current.env <- ls()
+  load(rdata)
+  new.in <- ls()[!(ls() %in% c(current.env, "current.env"))]
+  out <- eval(as.name(new.in))
+  rm(list=new.in)
+  return(out)
+}
