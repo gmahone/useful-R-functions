@@ -51,7 +51,7 @@ create_lsd_table <- function(means_df, lsd, decreasing=TRUE){
   means_df$Groups <- apply(init_mat, 2, function(x) paste(as.vector(na.omit(x)), sep="", collapse=","))
   return(means_df)
 }
-                          
+  
 split.and.pull <- function(x, split, index){
   return(sapply(strsplit(x=x, split=split), function(x) x[index]))
 }
@@ -69,7 +69,9 @@ stretch <- function(x, new_min=0, new_max=1){
     new_x <- new_x / old_max * (new_max - new_min) + new_min
   }
   return(new_x)
-}               
-                
-                
+}
+ 
+radians.to.angles <- function(radians){
+  return(radians * (90/(pi/2)))
+}
                 
