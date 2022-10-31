@@ -71,7 +71,7 @@ stretch <- function(x, new_min=0, new_max=1){
   return(new_x)
 }
  
-radians.to.angles <- function(radians){
+radians_to_angles <- function(radians){
   return(radians * (90/(pi/2)))
 }
                 
