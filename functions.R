@@ -18,7 +18,7 @@ do_load <- function(rdata){
   return(out)
 }
 
-rename.column <- function(x, y, data){
+rename_column <- function(x, y, data){
   colnames(data)[which(colnames(data) %in% x)] <- y
   return(data)
 }
