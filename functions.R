@@ -52,7 +52,7 @@ create_lsd_table <- function(means_df, lsd, decreasing=TRUE){
   return(means_df)
 }
   
-split.and.pull <- function(x, split, index){
+split_and_pull <- function(x, split, index){
   return(sapply(strsplit(x=x, split=split), function(x) x[index]))
 }
                 
