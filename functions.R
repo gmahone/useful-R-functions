@@ -75,3 +75,6 @@ radians.to.angles <- function(radians){
   return(radians * (90/(pi/2)))
 }
                 
+angles.to.radians <- function(angles){
+  return(angles * ((pi/2)/90))
+}
